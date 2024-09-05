@@ -5,9 +5,12 @@ import Navbar from './Component/Navbar';
 import LogIn from './Component/LogIn';
 import SignUp from './Component/SignUp';
 import Contact from './Component/Contact'
+import Footer from './Component/Footer'
+import { TeamMember } from './ElementData/AboutData';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  const [Data, setData] = useState(TeamMember)
   const navbarRouter = createBrowserRouter([
     {
       path: "/",
@@ -17,11 +20,15 @@ function App() {
     },
     {
       path: "/about",
-      element: <><Navbar /><AboutUs /></>
+      element: <>
+        <Navbar /><AboutUs item={Data} /><Footer />
+      </>
     },
     {
       path: "/contact",
-      element: <><Navbar /><Contact /></>
+      element: <>
+        <Navbar /><Contact /> <Footer />
+      </>
     },
     {
       path: '/login',

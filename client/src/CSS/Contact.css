@@ -20,29 +20,61 @@
     text-align: center;
 }
 
-.apply-online {
-    background-color: #482C65;
-    padding: 30px;
-    margin-top: 40px;
+.soc {
     border-radius: 10px;
+    background-color: #3C3176;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-top: 1cm;
+    gap: 0.5cm;
 }
 
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid white;
-    border-radius: 5px;
-    outline: none;
-    background: transparent;
-}
-
-form button {
-    background-color: #00A0E3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
+.fa-brands {
+    font-size: 25px;
+    color: black;
     cursor: pointer;
+}
+
+.formquery {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #3C3176;
+    margin-top: 2cm;
+    padding: 20px;
+}
+
+.formPro {
+    display: flex;
+    gap: 1cm;
+    width: 32cm;
+}
+
+#Problem {
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 0.4cm;
+    border: 2px solid yellow;
+    margin-top: 6px;
+    outline: 0;
+    background-color: transparent;
+    color: white;
+    font-family: 'Chakra Petch';
+    font-size: 1.3rem;
+    resize: none;
+    height: 5cm;
+    width: 16cm;
+}
+
+#Submit {
+    border-radius: 25px;
+    width: 5cm;
+    margin-top: 1cm;
+    cursor: pointer;
+    background-color: #02ece8;
+    border: 2px solid #02ece8;
 }

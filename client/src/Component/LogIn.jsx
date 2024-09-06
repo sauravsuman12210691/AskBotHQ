@@ -8,7 +8,7 @@ export default function LogIn() {
         <>
             <div className="LogInPage">
                 <header>
-                    <Link to="/"><img src={Logo} alt="logo" class="logo" /></Link>
+                    <Link to="/"><img src={Logo} alt="logo" className="logo" /></Link>
                 </header>
                 <div className="overall">
                     <div className="socialmedia">
@@ -29,9 +29,9 @@ export default function LogIn() {
                         <div className="text">Login to your account</div>
                         <div className="text">Don't have an account? <Link to='/signup' className="sign">Sign up for free!</Link></div>
                         <form>
-                            <label for="email" id="Username" className="required">Username</label>
+                            <label htmlFor="email" id="Username" className="required">Username</label>
                             <input type="email" name="email" id="email" placeholder="Enter Username" required />
-                            <label for="password" className="required">Password</label>
+                            <label htmlFor="password" className="required">Password</label>
                             <input type="password" name="password" id="password" required placeholder="Enter Password" />
                             <button className="submit" id="logIn">Log In</button>
                         </form>

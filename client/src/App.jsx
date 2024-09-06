@@ -6,6 +6,7 @@ import LogIn from './Component/LogIn';
 import SignUp from './Component/SignUp';
 import Contact from './Component/Contact'
 import Footer from './Component/Footer'
+import Error404 from './Component/Error404';
 import { TeamMember } from './ElementData/AboutData';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -37,6 +38,10 @@ function App() {
     {
       path: '/signup',
       element: <SignUp />
+    },
+    {
+      path: '*',
+      element: <Error404 />
     }
   ])
   return (

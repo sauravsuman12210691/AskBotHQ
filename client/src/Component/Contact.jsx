@@ -9,32 +9,44 @@ export default function Contact() {
                 <p>Please provide your company details or contact us via phone or video call.</p>
                 <div className="contact-info">
                     <div className="contact-card">
-                        <h3>India</h3>
-                        <p>LPU phagwara Punjab 800023.</p>
+                        <span className="material-symbols-outlined">
+                            location_on
+                        </span>
+                        <p>LPU Phagwara Punjab 144411.</p>
                     </div>
                     <div className="contact-card">
-                        <h3>Email</h3>
-                        <p>vedsinghpratap@gmail.com</p>
-                        <p>Suravsuman320@gmail.com</p>
-                        <p>Aditya03125kumar@gmail.com</p>
+                        <span className="material-symbols-outlined">
+                            mail
+                        </span>
+                        <p>askbotHQ8956@gmail.com</p>
                     </div>
                     <div className="contact-card">
-                        <h3>Phone</h3>
-                        <p>9798741907</p>
-                        <p>9113198281</p>
-                        <p>9507909802</p>
+                        <span className="material-symbols-outlined">
+                            call
+                        </span>
+                        <p>022-78563214</p>
                     </div>
                 </div>
-
-                <div className="apply-online">
-                    <h2>Apply online</h2>
+                <div className="soc">
+                    <i className="fa-brands fa-square-instagram"></i>
+                    <i className="fa-brands fa-facebook-f"></i>
+                    <i className="fa-brands fa-youtube"></i>
+                </div>
+                <div className="formquery">
+                    <h1>Apply Online</h1>
                     <form>
-                        <input type="text" placeholder="Full Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="text" placeholder="Title" />
-                        <input type="tel" placeholder="Phone number" />
-                        <textarea placeholder="How we can help you"></textarea>
-                        <button type="submit">Send</button>
+                        <div className="formPro">
+                            <div className="userinfo">
+                                <input type="text" className="userForm" name="name" id="Name" placeholder="Full name" />
+                                <input type="email" name="email" id="Email" placeholder="Email" className="userForm" />
+                                <input type="text" name="tilte" id="Title" placeholder="Title" className="userForm" />
+                                <input type="number" name="phone" id="Number" className="userForm" placeholder="Phone Number" />
+                            </div>
+                            <div className="userproblem">
+                                <textarea name="problem" id="Problem" className="userForm" placeholder="How can we help you?"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" value="Send" className="userForm" id="Submit" />
                     </form>
                 </div>
             </section>

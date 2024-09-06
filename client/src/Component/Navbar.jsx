@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <div className="navbar">
             <input type="checkbox" id="check" />
-            <label for="check" className="checkbtn">
+            <label htmlFor="check" className="checkbtn">
                 <span className="material-symbols-outlined" id="ham">menu</span>
             </label>
             <Link to='/'><img src={Logo} alt="Logo" className="logo" /></Link>

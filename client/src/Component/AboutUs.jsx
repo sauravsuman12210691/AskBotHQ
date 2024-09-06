@@ -8,7 +8,7 @@ export default function AboutUs({ item }) {
             <div className="aboutDetail">Askbot: Empowering businesses with innovative AI-driven solutions to enhance productivity and customer engagement. We're your partner in navigating the future     of intelligent automation.</div>
             <div className="aboutData">
                 {item.map((val) => (
-                    <div className="container">
+                    <div className="container" key={val.id}>
                         <div className="card">
                             <div className="lines"></div>
                             <div className="imgBx">
@@ -19,6 +19,7 @@ export default function AboutUs({ item }) {
                                     <div className="name">{val.name}</div>
                                     <div className="number">{val.pnumber}</div>
                                     <div className="email">{val.email}</div>
+                                    <div className="role">({val.role})</div>
                                 </div>
                             </div>
                         </div>

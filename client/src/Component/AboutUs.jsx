@@ -5,7 +5,6 @@ export default function AboutUs({ item }) {
     return (
         <>
             <h1 className="aboutHead">About Us</h1>
-            <div className="aboutDetail">Askbot: Empowering businesses with innovative AI-driven solutions to enhance productivity and customer engagement. We're your partner in navigating the future     of intelligent automation.</div>
             <div className="aboutData">
                 {item.map((val) => (
                     <div className="container" key={val.id}>

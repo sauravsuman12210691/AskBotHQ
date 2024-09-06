@@ -1,21 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Protest+Guerrilla&family=SUSE:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Protest+Guerrilla&family=SUSE:wght@100..800&display=swap');
+
 .aboutHead {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 50px;
-}
-
-.aboutDetail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    text-align: justify;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    width: 25%;
+    font-size: 100px;
+    color: white;
+    font-family: 'Protest Guerrilla';
 }
 
 .aboutData {
+    margin-top: 1.5cm;
     display: flex;
     flex-wrap: wrap;
 }
@@ -166,18 +163,29 @@
 }
 
 .card .content .detail {
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.5cm;
     color: white;
     padding: 30px 20px;
     text-align: center;
     width: 100%;
     transition: 0.5s;
-    transform: translateY(77px);
+    transform: translateY(104px);
 }
 
 .name {
+    margin-bottom: 20px;
     font-weight: bold;
+    color: #45f3ff;
+    font-family: 'Bebas Neue';
+    font-size: 1cm;
+}
+
+.number {
+    font-family: 'SUSE';
+}
+
+.email {
+    font-family: 'Comfortaa';
 }
 
 .card:hover .content .detail {

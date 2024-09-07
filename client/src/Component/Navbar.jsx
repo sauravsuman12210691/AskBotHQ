@@ -1,24 +1,49 @@
 import React from "react";
 import Logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
-import '../CSS/Navbar.css';
+import { Link, useLocation } from 'react-router-dom';
+import N from '../CSS/Navbar.module.css';
 
 function Navbar() {
-    return (
-        <div className="navbar">
-            <input type="checkbox" id="check" />
-            <label htmlFor="check" className="checkbtn">
-                <span className="material-symbols-outlined" id="ham">menu</span>
-            </label>
-            <Link to='/'><img src={Logo} alt="Logo" className="logo" /></Link>
-            <div className='menu'>
-                <Link to='/' className="s">Home</Link>
-                <Link to='/about' className="s">About</Link>
-                <Link to='/contact' className="s">Contact</Link>
-                <Link to='/login' className='g'>Get Started</Link>
+    const handleLogOut = () => {
+        localStorage.removeItem('auth-token');
+    }
+    if (location.pathname === '/') {
+        return (
+            <div className={N.navbar}>
+                <input type="checkbox" id={N.check} />
+                <label htmlFor="check" className={N.checkbtn}>
+                    <span className="material-symbols-outlined" id={N.ham}>menu</span>
+                </label>
+                <Link to='/'><img src={Logo} alt="Logo" className={N.logo} /></Link>
+                <div className={N.menu}>
+                    <Link to='/login'>
+                        <button className={N.btn}>Log In</button>
+                    </Link>
+                    <Link to='/signup'>
+                        <button className={N.btn}>Sign Up</button>
+                    </Link>
+                    <Link to='/home'>Home</Link>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    else {
+        return (
+            <div className={N.navbar}>
+                <input type="checkbox" id={N.check} />
+                <label htmlFor="check" className={N.checkbtn}>
+                    <span className="material-symbols-outlined" id={N.ham}>menu</span>
+                </label>
+                <Link to='/home'><img src={Logo} alt="Logo" className={N.logo} /></Link>
+                <div className={N.menu}>
+                    <Link to='/home' className={N.s}>Home</Link>
+                    <Link to='/about' className={N.s}>About</Link>
+                    <Link to='/contact' className={N.s}>Contact</Link>
+                    <Link to='/profile' className={N.profile}>Profile</Link>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Navbar;

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../assets/logo.png';
-import '../CSS/Sign.css';
+import S from '../CSS/Sign.module.css';
 
 const length = 10;
 
 export default function SignUp() {
+    const Navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         number: '',
@@ -48,7 +49,6 @@ export default function SignUp() {
 
             if (response.ok) {
                 const result = await response.json();
-                setSuccess("Registration successful! Please log in.");
                 setFormData({
                     name: '',
                     number: '',
@@ -56,6 +56,8 @@ export default function SignUp() {
                     password: '',
                     confirmPassword: ''
                 });
+                alert("Registration successful! Please log in.");
+                Navigate('/login')
             } else {
                 const errorResult = await response.json();
                 setError(errorResult.message || "Registration failed. Please try again.");
@@ -66,14 +68,15 @@ export default function SignUp() {
     };
 
     return (
-        <div className="signUp">
+        <div className={S.signUp}>
             <header>
-                <Link to="/"><img src={Logo} alt="logo" className="logo" /></Link>
+                <Link to="/"><img src={Logo} alt="logo" className={S.logo} /></Link>
             </header>
-            <div className="signnn">
-                <form className="form" onSubmit={handleSubmit}>
-                    <label htmlFor="name" id="Name" className="required">Name</label>
+            <div className={S.signnn}>
+                <form className={S.form} onSubmit={handleSubmit}>
+                    <label htmlFor="name" id="Name" className={S.label + ' ' + S.required}>Name</label>
                     <input
+                        className={S.input}
                         type="text"
                         name="name"
                         id="name"
@@ -82,8 +85,9 @@ export default function SignUp() {
                         onChange={handleChange}
                         required
                     />
-                    <label htmlFor="number" id="Number" className="required">Phone Number</label>
+                    <label htmlFor="number" id="Number" className={S.label + ' ' + S.required}>Phone Number</label>
                     <input
+                        className={S.input}
                         type="text"
                         name="number"
                         id="number"
@@ -94,8 +98,9 @@ export default function SignUp() {
                         maxLength={length}
                         minLength={length}
                     />
-                    <label htmlFor="email" id="Email" className="required">Email ID</label>
+                    <label htmlFor="email" id="Email" className={S.label + ' ' + S.required}>Email ID</label>
                     <input
+                        className={S.input}
                         type="email"
                         name="email"
                         id="email"
@@ -104,8 +109,9 @@ export default function SignUp() {
                         onChange={handleChange}
                         required
                     />
-                    <label htmlFor="password" className="required">Password</label>
+                    <label htmlFor="password" className={S.label + ' ' + S.required}>Password</label>
                     <input
+                        className={S.input}
                         type="password"
                         name="password"
                         id="password"
@@ -114,8 +120,9 @@ export default function SignUp() {
                         onChange={handleChange}
                         required
                     />
-                    <label htmlFor="confirmPassword" className="required">Confirm Password</label>
+                    <label htmlFor="confirmPassword" className={S.label + ' ' + S.required}>Confirm Password</label>
                     <input
+                        className={S.input}
                         type="password"
                         name="confirmPassword"
                         id="confirmPassword"
@@ -124,11 +131,11 @@ export default function SignUp() {
                         onChange={handleChange}
                         required
                     />
-                    <button className="submit" type="submit">Sign Up</button>
+                    <button className={S.button} type="submit">Sign Up</button>
                 </form>
                 {error && <div className="error">{error}</div>}
                 {success && <div className="success">{success}</div>}
-                <div className="text">Already have an Account... <Link to='/login' className="sign">Log In</Link></div>
+                <div className={S.warning}>Already have an Account... <Link to='/login' className={S.sign}>Log In</Link></div>
             </div>
         </div>
     );

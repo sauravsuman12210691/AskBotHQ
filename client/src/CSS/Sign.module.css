@@ -1,12 +1,9 @@
-/* importing*/
-
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
-
-.LogInPage {
+.signUp {
     background: url("../assets/BackforLS.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,40 +26,18 @@ header {
     width: 2cm;
 }
 
-.logged {
+.signnn {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    backdrop-filter: blur(15px);
+}
+
+.form {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(15px);
     padding: 40px;
-}
-
-.heading {
-    font-family: 'Lemon', cursive;
-    color: white;
-    text-align: center;
-    font-size: 3em;
-}
-
-.warning {
-    color: white;
-    font-size: 1.2em;
-    font-family: 'Lemon';
-    font-weight: 500;
-}
-
-.sign {
-    color: white;
-    text-decoration: none;
-}
-
-.sign:hover {
-    color: aqua;
-}
-
-.form {
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
 }
 
 .label {
@@ -111,20 +86,7 @@ header {
     border: 2px solid #3C3176;
 }
 
-.forget {
-    cursor: pointer;
-    display: inline;
-    margin-top: 2em;
-    height: 1cm;
-    border-radius: 5px;
-    font-family: 'Black Ops One';
-    font-size: 1rem;
-    width: 91%;
-    background-color: white;
-    border: 2px solid white;
-}
-
-.forget:hover {
-    background-color: #3C3176;
-    border: 2px solid #3C3176;
+.warning {
+    font-family: 'Lemon';
+    font-size: 1.5em;
 }

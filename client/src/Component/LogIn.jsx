@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import L from '../CSS/Login.module.css';
+import Logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -25,7 +27,7 @@ const Login = () => {
 
             if (data.authentication) {
                 localStorage.setItem("auth-token", data.token)
-                window.location.href = "/"
+                window.location.href = "/home"
                 // Handle successful login, e.g., store token, redirect, etc.
                 console.log('Login successful:', data);
                 // Perform actions like storing token, redirecting, etc.
@@ -40,31 +42,36 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
+        <div className={L.LogInPage}>
+            <header>
+                <Link to='/'><img src={Logo} alt="Logo" className={L.logo} /></Link>
+            </header>
+            <div className={L.logged}>
+                <h2 className={L.heading}>Login</h2>
+                <p className={L.warning}>Don't have an account? <Link to='/signup' className={L.sign}>Sign up for free!</Link> </p>
+                <form className={L.form} onSubmit={handleSubmit}>
+                    <label className={L.label + ' ' + L.required}>Email:</label>
                     <input
+                        className={L.input}
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </div>
-                <div>
-                    <label>Password:</label>
+                    <label className={L.label + ' ' + L.required}>Password:</label>
                     <input
+                        className={L.input}
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                </div>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                <button type="submit">Login</button>
-            </form>
-        </div>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    <button className={L.button} type="submit">Login</button>
+                </form>
+                <button className={L.forget}>Forgot Password</button>
+            </div>
+        </div >
     );
 };
 

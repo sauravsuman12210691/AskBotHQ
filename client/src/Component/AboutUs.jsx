@@ -1,30 +1,34 @@
 import React from "react";
-import '../CSS/About.css'
+import A from '../CSS/About.module.css';
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function AboutUs({ item }) {
     return (
-        <>
-            <h1 className="aboutHead">About Us</h1>
-            <div className="aboutData">
+        <div className={A.aboutManager}>
+            <Navbar />
+            <h1 className={A.aboutHead}>About Us</h1>
+            <div className={A.aboutData}>
                 {item.map((val) => (
-                    <div className="container" key={val.id}>
-                        <div className="card">
-                            <div className="lines"></div>
-                            <div className="imgBx">
+                    <div className={A.container} key={val.id}>
+                        <div className={A.card}>
+                            <div className={A.lines}></div>
+                            <div className={A.imgBx}>
                                 <img src={val.imgSrc} alt="nothing" height="100cm" width="100cm" />
                             </div>
-                            <div className="content">
-                                <div className="detail">
-                                    <div className="name">{val.name}</div>
-                                    <div className="number">{val.pnumber}</div>
-                                    <div className="email">{val.email}</div>
-                                    <div className="role">({val.role})</div>
+                            <div className={A.content}>
+                                <div className={A.detail}>
+                                    <div className={A.name}>{val.name}</div>
+                                    <div className={A.number}>{val.pnumber}</div>
+                                    <div className={A.email}>{val.email}</div>
+                                    <div className={A.role}>({val.role})</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-        </>
-    )
+            <Footer />
+        </div>
+    );
 }

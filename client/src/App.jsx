@@ -1,34 +1,41 @@
 import React, { useState } from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+//Component Importing
 import HomePage from './Component/HomePage';
+import Landing from './Component/Landing';
 import AboutUs from './Component/AboutUs';
-import Navbar from './Component/Navbar';
 import LogIn from './Component/LogIn';
 import SignUp from './Component/SignUp';
 import Contact from './Component/Contact'
-import Footer from './Component/Footer'
 import Error404 from './Component/Error404';
+//Data Importing
 import { TeamMember } from './ElementData/AboutData';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const [Data, setData] = useState(TeamMember)
   const navbarRouter = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <>
-        <Navbar /> <HomePage />
+        <Landing />
+      </>
+    },
+    {
+      path: "/home",
+      element: <>
+        <HomePage />
       </>
     },
     {
       path: "/about",
       element: <>
-        <Navbar /><AboutUs item={Data} /><Footer />
+        <AboutUs item={Data} />
       </>
     },
     {
       path: "/contact",
       element: <>
-        <Navbar /><Contact /> <Footer />
+        <Contact />
       </>
     },
     {

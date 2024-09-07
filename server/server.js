@@ -10,9 +10,11 @@ app.use(cors());
 
 
 const authRoutes = require('./Routes/authRoutes');
+const aiRoutes = require('./Routes/aiRoutes');
 
 
 app.use('/api/auth', authRoutes);
+app.use('/api/ai', aiRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {

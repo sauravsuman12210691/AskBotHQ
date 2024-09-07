@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const user = require("../Model/userModel");
-// const getuser = require("../middleware/getuserMiddile");
+const getuser = require("../middleware/getuser");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const app = express();
@@ -74,14 +74,14 @@ router.post("/login", async (req, res) => {
 });
 
 // to get user details ----> http://localhost:3000/api/auth/dashboard
-// router.get("/dashboard", getuser, async (req, res) => {
-//   try {
-//     let userId = req.user.id;
-//     let userdetails = await user.findById(userId).select("-password");
-//     res.send(userdetails);
-//   } catch (err) {
-//     res.status(500).json({ error: "Some error occurs", err });
-//   }
-// });
+router.get("/dashboard", getuser, async (req, res) => {
+  try {
+    let userId = req.user.id;
+    let userdetails = await user.findById(userId).select("-password");
+    res.send(userdetails);
+  } catch (err) {
+    res.status(500).json({ error: "Some error occurs", err });
+  }
+});
 
 module.exports = router;

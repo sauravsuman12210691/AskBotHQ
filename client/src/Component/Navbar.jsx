@@ -4,9 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import N from '../CSS/Navbar.module.css';
 
 function Navbar() {
-    const handleLogOut = () => {
-        localStorage.removeItem('auth-token');
-    }
+
     if (location.pathname === '/') {
         return (
             <div className={N.navbar}>

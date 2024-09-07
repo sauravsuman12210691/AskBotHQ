@@ -10,7 +10,7 @@ const bcrypt = require("bcrypt");
 // const dotenv=require("dotenv");
 // dotenv.config();
 
-const mongodbURI ="mongodb://localhost:27017/AskBotHQ";
+const mongodbURI = "mongodb://localhost:27017/AskBotHQ";
 const router = express.Router();
 
 mongoose.connect(mongodbURI);
@@ -40,7 +40,7 @@ router.post("/register", async (req, res) => {
     await newUser.save();
 
     res.send({
-      success:true
+      success: true
     });
   } catch (err) {
     res.status(500).json({ error: "Some error occurs", err });

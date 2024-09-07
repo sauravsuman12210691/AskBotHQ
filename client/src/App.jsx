@@ -8,6 +8,7 @@ import LogIn from './Component/LogIn';
 import SignUp from './Component/SignUp';
 import Contact from './Component/Contact'
 import Error404 from './Component/Error404';
+import Profile from './Component/Profile';
 //Data Importing
 import { TeamMember } from './ElementData/AboutData';
 
@@ -45,6 +46,10 @@ function App() {
     {
       path: '/signup',
       element: <SignUp />
+    },
+    {
+      path: '/profile',
+      element: <Profile />
     },
     {
       path: '*',

@@ -18,7 +18,7 @@ const userSchema =new Schema({
         type:Date,
         default: Date.now()
     },
-    contact:{
+    number:{
         type:String
     },
     bio: {

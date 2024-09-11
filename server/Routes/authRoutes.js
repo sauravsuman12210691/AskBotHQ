@@ -18,7 +18,7 @@ mongoose.connect(mongodbURI);
 // http://localhost:3000/api/auth/register
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password ,number,} = req.body;
 
     if (!name || !email || !password) {
       res.send("All fields are required");
@@ -34,6 +34,7 @@ router.post("/register", async (req, res) => {
     const newUser = new user({
       name,
       email,
+      number,
       password: hashedPassword,
     });
 

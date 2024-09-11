@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 export default function Profile() {
     useEffect(() => {
         handleData();
+    }, []); // Empty array means this useEffect runs once when the component mounts
 
-    })
     useEffect(() => {
         if (localStorage.getItem('auth-token') === null) {
             window.location.href = '/';
         }
-    })
+    }, []); // Empty array means this useEffect runs once when the component mounts
+
     const [UserData, setUserData] = useState({
         img: 'https://bootdey.com/img/Content/avatar/avatar7.png',
         name: '',
@@ -25,11 +26,9 @@ export default function Profile() {
             instagram: '',
             facebook: '',
         }
-    })
-    const handleData = async (e) => {
-        // e.preventDefault();
+    });
 
-        // Replace with your API URL
+    const handleData = async () => {
         const apiURL = 'http://localhost:3000/api/auth/dashboard';
 
         try {
@@ -38,33 +37,32 @@ export default function Profile() {
                 headers: {
                     'auth-token': localStorage.getItem('auth-token')
                 },
-
             });
 
             const data = await response.json();
             console.log(data);
 
-            if (data !== null) {
-                UserData.name = data.name;
-                UserData.email = data.email;
-                // UserData.phone = data.phone;
-                // UserData.address = data.address;
-
-
+            if (data) {
+                setUserData(prevState => ({
+                    ...prevState,
+                    name: data.name,
+                    email: data.email,
+                    phone: data.number,
+                    address: data.address,
+                    // You can update other fields like 'role' or 'links' here
+                }));
             } else {
-                // Handle errors
-                setError(data.message || 'Login failed');
+                console.error('Error: No data returned');
             }
         } catch (error) {
-            console.error('Error during login:', error);
-            setError('An error occurred during login');
+            console.error('Error during data fetching:', error);
         }
     };
+
     const handleLogOut = () => {
         localStorage.removeItem('auth-token');
-        window.location.href = '/'
-    }
-
+        window.location.href = '/';
+    };
 
     return (
         <div className={P.Profiles}>
@@ -72,7 +70,7 @@ export default function Profile() {
                 <div className={P.container}>
                     <div className={P.profileCard}>
                         <div className={P.profileHeader}>
-                            <img src={UserData.img} alt="John Doe" className={P.avatar} />
+                            <img src={UserData.img} alt={UserData.name} className={P.avatar} />
                             <h2>{UserData.name}</h2>
                             <p>{UserData.role}</p>
                             <p>{UserData.address}</p>

@@ -4,14 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
 .signUp {
-    background: url("../assets/BackforLS.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
+    background: linear-gradient(120deg, #3C3176, #3520a2, #11054d);
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 header {
@@ -26,11 +25,26 @@ header {
     width: 2cm;
 }
 
+.grey {
+    display: flex;
+    width: 70%;
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.greyImg {
+    display: flex;
+    width: 35%;
+}
+
 .signnn {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    backdrop-filter: blur(15px);
+    width: 65%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 50px;
 }
 
 .form {
@@ -42,7 +56,7 @@ header {
 
 .label {
     margin-top: 6px;
-    color: white;
+    color: black;
     font-family: 'Chakra Petch';
     font-size: 1.5rem;
     user-select: none;
@@ -59,11 +73,11 @@ header {
     border-radius: 5px;
     padding: 2px;
     padding-left: 0.4cm;
-    border: 2px solid yellow;
+    border: 2px solid black;
     margin-top: 6px;
     outline: 0;
     background-color: transparent;
-    color: white;
+    color: black;
     font-family: 'Chakra Petch';
     font-size: 1.3rem;
 }
@@ -84,9 +98,28 @@ header {
 .button:hover {
     background-color: #3C3176;
     border: 2px solid #3C3176;
+    color: white;
 }
 
 .warning {
     font-family: 'Lemon';
     font-size: 1.5em;
+}
+
+.namePnumber {
+    display: flex;
+}
+
+.passwordC {
+    display: flex;
+}
+
+#eemm {
+    width: 93%;
+}
+
+.signUpImg {
+    position: relative;
+    top: 2cm;
+    left: -6cm;
 }
